@@ -90,139 +90,28 @@ bool isPrime(ll n){if(n<=1)return false;if(n<=3)return true;if(n%2==0||n%3==0)re
 bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log2(n)));}
 bool isPerfectSquare(ll x){if (x >= 0) {ll sr = sqrt(x);return (sr * sr == x);}return false;}
 
-<<<<<<< HEAD
-=======
- int baseOR(int m) {
-    if(m <= 1) return 0;
-    int p = 31 - __builtin_clz(m - 1);
-    return ((unsigned int)1 << (p + 1)) - 1;
-}
->>>>>>> e2e95d3 (cf contest)
 
 
 //Code
 void solve()
 {
-<<<<<<< HEAD
     ll n;
     cin>>n;
-=======
-    ll n,x;
-    cin>>n>>x;
+    string s;
+    cin >>s;
+    ll d =0, u=0;
 
-    if( n==1){
-        cout << x<< endl;
-        return;
+    for(char c :s){
+        if(c == '-'){
+            d++;
+        } else
+            u++;
+
     }
 
-
-    int max_bit_allowed = 0;
-        while(true){
-            if ((max_bit_allowed & ~x) != 0)
-                break;
-            max_bit_allowed++;
-        }
-        bool full = (((x + 1) & x) == 0);
- 
-        int default_size;      
-        bool needs_update; 
-        if(full) {
-            
-            if(n >= max_bit_allowed) {
-                default_size = max_bit_allowed;
-                needs_update = false;
-            } else {
-                if(baseOR(n) == x) {
-                    default_size = n;
-                    needs_update = false;
-                } else {
-                    default_size = n - 1;
-                    needs_update = true;
-                }
-            }
-        } else {
-            if(n >= max_bit_allowed + 1) {
-                default_size = max_bit_allowed;
-                needs_update = true;
-            } else {
-                default_size = n - 1;
-                needs_update = true;
-            }
-        }
- 
-        vector<int> ans;
-        for (int i = 0; i < default_size; i++){
-            ans.push_back(i);
-        }
- 
-        if(needs_update){
-            int patch = x & ~(baseOR(default_size));
-            ans.push_back(patch);
-        }
- 
-        while(ans.size() < n)
-            ans.push_back(0);
- 
-        for(auto v : ans)
-            cout << v << " ";
-        cout << "\n";
-
-
-    // int r = 0;
-    // while(r < 31 && ((x >> r) & 1)) r++;
-    // int r0 = max(r, 1); 
-
-    // int m;
-
-    // if(x == ((1 << r0) - 1)) {
-    //     if(n >= (1 << r0)) m = 1 << r0; 
-    //     else m = n; 
-    // } else {
-    //     int candidate = (1 << r0);
-    //     if(n >= (1 << r0)) m = candidate;
-    //     else m = n-1 ;
-    // }
-
-    // vector<int > result;
-
-    // for(int i =0;i<m;i++){
-    //    result.push_back(i);
-    // }
-
-    // unsigned int orBase = bitOR(m);
- 
-    // if(orBase != x){
-    //     unsigned int v = x & (~orBase);
-    //     result.push_back(v);
-    // }
-
-    // while(result.size() < n){
-    //     result.push_back(0);
-    // }
-
-    // for(auto v : result)
-    //         cout << v << " ";
-    //     cout << "\n";
-    // return;
-
-    // vector<int> arr(64);
-    // for (int i = 0; i < 64; ++i) {
-    //     arr[i] = (n >> i) & 1;
-    // }
-    // ll startNumber =0;
-    // for(int i =0;i<arr.size();i++){
-    //     if(arr[i] ==1){
-    //         startNumber += pow(2,i);
-    //     }else{
-    //         break;
-    //     }
-    // }
-
-    
-
-    // for(int i =0;i<n;i++) cou << result[i] << " ";
-    // cout <<endl;
->>>>>>> e2e95d3 (cf contest)
+    ll l = d/2;
+    ll r = (d+1)/2;
+    cout << u*l*r <<endl;
 }
 //Main
 int main()
