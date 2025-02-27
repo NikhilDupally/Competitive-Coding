@@ -90,23 +90,22 @@ bool isPrime(ll n){if(n<=1)return false;if(n<=3)return true;if(n%2==0||n%3==0)re
 bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log2(n)));}
 bool isPerfectSquare(ll x){if (x >= 0) {ll sr = sqrt(x);return (sr * sr == x);}return false;}
 
-<<<<<<< HEAD
-=======
+
  int baseOR(int m) {
     if(m <= 1) return 0;
     int p = 31 - __builtin_clz(m - 1);
     return ((unsigned int)1 << (p + 1)) - 1;
 }
->>>>>>> e2e95d3 (cf contest)
+
 
 
 //Code
 void solve()
 {
-<<<<<<< HEAD
+
     ll n;
     cin>>n;
-=======
+
     ll n,x;
     cin>>n>>x;
 
@@ -222,7 +221,7 @@ void solve()
 
     // for(int i =0;i<n;i++) cou << result[i] << " ";
     // cout <<endl;
->>>>>>> e2e95d3 (cf contest)
+
 }
 //Main
 int main()
