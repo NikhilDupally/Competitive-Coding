@@ -4,6 +4,8 @@
 using namespace std;
 
 
+
+
 //Speed
 #define Code ios_base::sync_with_stdio(false);
 #define By cin.tie(NULL);
@@ -90,22 +92,16 @@ bool isPrime(ll n){if(n<=1)return false;if(n<=3)return true;if(n%2==0||n%3==0)re
 bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log2(n)));}
 bool isPerfectSquare(ll x){if (x >= 0) {ll sr = sqrt(x);return (sr * sr == x);}return false;}
 
-
  int baseOR(int m) {
     if(m <= 1) return 0;
     int p = 31 - __builtin_clz(m - 1);
-    return ((unsigned int)1 << (p + 1)) - 1;
+    return ((int)1 << (p + 1)) - 1;
 }
-
 
 
 //Code
 void solve()
 {
-
-    ll n;
-    cin>>n;
-
     ll n,x;
     cin>>n>>x;
 
@@ -160,7 +156,7 @@ void solve()
         }
  
         while(ans.size() < n)
-            ans.push_back(0);
+            ans.push_back(x);
  
         for(auto v : ans)
             cout << v << " ";
@@ -221,7 +217,6 @@ void solve()
 
     // for(int i =0;i<n;i++) cou << result[i] << " ";
     // cout <<endl;
-
 }
 //Main
 int main()
